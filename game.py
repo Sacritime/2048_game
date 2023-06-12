@@ -366,14 +366,16 @@ def print_field(blocks: list, borders: str | tuple | list):
                             block = " "
                         else:
                             block = str(block.num)
-                        string += borders[6] + block.rjust(len_//2+1).ljust(len_)
+                        string += borders[6] + block.rjust(len_//2+1
+                                                           ).ljust(len_)
                     elif j != size[0]:
                         block = blocks[i][j]
                         if block is None:
                             block = " "
                         else:
                             block = str(block.num)
-                        string += borders[7] + block.rjust(len_//2+1).ljust(len_)
+                        string += borders[7] + block.rjust(len_//2+1
+                                                           ).ljust(len_)
                     else:
                         string += borders[6]
             strings += string + "\n"
@@ -381,7 +383,8 @@ def print_field(blocks: list, borders: str | tuple | list):
 
 
 def main():
-    print("Do you want to see hello scene?\n(choose \"y\" if you haven't seen it yet)")
+    print("Do you want to see hello scene?\n")
+    print("choose \"y\" if you haven't seen it yet)")
     ans = input("Y or n >>> ").lower().strip()
     while True:
         if ans not in ("yes", "y", "no", "n"):
@@ -391,7 +394,7 @@ def main():
     if ans in ("yes", "y"):
         borders, (x, y) = hello()
         borders = ("╔╗╚╝═─║│╤╧╟╢┼",
-               "++++--||+++++")[borders]
+                   "++++--||+++++")[borders]
     else:
         borders, (x, y) = i_have_already_seen_the_hello_scene()
 
@@ -427,7 +430,6 @@ def main():
             print_field(blocks, borders)
             print("Game Over!")
             break
-
 
 
 if __name__ == "__main__":
